@@ -15,18 +15,20 @@ plotSequence(x, lty = 1)
 invisible(NULL)
 }
 \description{
-Function to plot sequences generate with funtion randomRatio
+Function to plot sequences generate with function randomRatio
 If other allocation sequences are plotted:
 the function assumes that the different trial arms are coded numerically
-with numbers atarting at 1 and without any has no missing data-
+with numbers starting at 1 and without any has no missing data-
 sequences
 }
 \examples{
 test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000, returnSeq = 1)
 head(test)
-test <- randomRatio(5, c(21,21,2,2,8), 500, 
+plotSequence(test)
+test <- randomRatio(5, c(21,21,2,2,8), 500,
                     allowedImbalance = c(0.06,0.06, 0.04,0.04, 0.05),
-                    seed = 1234, 
+                    seed = 1234,
                     returnSeq = 5)
-head(test)                     
+head(test)
+plotSequence(test[,1])
 }

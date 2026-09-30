@@ -33,12 +33,12 @@ randomRatio(
 Returns a vector or matrix with 1 or more valid allocation sequences
 }
 \description{
-Function to generate allocation sequences for clinical trials if 
-the allocation ratio is unusually large. 
+Function to generate allocation sequences for clinical trials if
+the allocation ratio is unusually large.
 In this situation simple block randomisation may cause problems
 because a large block size could result in groups being over- or underrepresented.
-To overcome this limitation, the function combines features of block randomisation, 
-biased coin design, and covariate constraint randomisation to ensure that 
+To overcome this limitation, the function combines features of block randomisation,
+biased coin design, and covariate constraint randomisation to ensure that
 the allocation is always close to the anticipated.
 }
 \examples{
@@ -46,9 +46,9 @@ test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000)
 test
 test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000, returnSeq = 5)
 head(test)
-test <- randomRatio(5, c(21,21,2,2,8), 500, 
+test <- randomRatio(5, c(21,21,2,2,8), 500,
                     allowedImbalance = c(0.03, 0.03, 0.06, 0.06, 0.04),
-                    seed = 1234, 
+                    seed = 1234,
                     returnSeq = 5)
-head(test)                     
+head(test)
 }
