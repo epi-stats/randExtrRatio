@@ -1,7 +1,9 @@
-#' Function to generate allocation sequences for randomized trials if the allocation ratio is large
+#' Function to generate randomisation sequences if the allocation ratio is large
+#' @export
 #'
+#' @description
 #' Function to generate allocation sequences for clinical trials if
-#' the allocation ratio is unusually large.
+#' the allocation ratio is large.
 #' In this situation simple block randomisation may cause problems
 #' because a large block size could result in groups being over- or underrepresented.
 #' To overcome this limitation, the function combines features of block randomisation,
