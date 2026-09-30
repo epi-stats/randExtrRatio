@@ -1,0 +1,28 @@
+Package: randExtrRatio
+Type: Package
+Title: Randomisation for trials with extrem allocation ratios 
+Version: 0.2.0
+Authors@R: c(
+    person(
+      "Jan", "Hattendorf",
+      email = "jan.hattendorf@unibas.ch",
+      role = c("aut", "cre")
+    )
+  )
+Description: Package to generate random allocation sequences for trials
+  with extrem allocation ratios as in doi: 10.1093/cid/ciad387 
+  (21:21:2:2:8 resulting in a minimum block size of 54).
+  In this situation simple block randomisation may cause problems
+  because a large block size could result in groups being over- or underrepresented.
+  To overcome this limitation, the main function combines features of block randomisation, 
+  biased coin design, and covariate constraint randomisation to ensure that 
+  the allocation is always close to the anticipated.
+  This is done via the following steps:
+  1. Define the maximum tolerable difference between the anticipated and actual allocation ratio for each arm
+  - e.g. in a 5 arm trail 4%, 4%, 6%, 6% and 4%
+  2. Generate many (e.g. 1'000'000) block randomized sequences 
+  3. Identify those sequences where the difference between the anticipated and actual allocation ratio is – at any position – never above the maximum allowed difference specified in 1.
+  4. Select randomly one sequence from the valid allocation sequences
+License: MIT
+Encoding: UTF-8
+LazyData: true
