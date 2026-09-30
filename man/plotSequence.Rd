@@ -24,7 +24,7 @@ test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000, returnSeq = 1)
 head(test)
 plotSequence(test)
 test <- randomRatio(5, c(21,21,2,2,8), 500,
-                    allowedImbalance = c(0.06,0.06, 0.04,0.04, 0.05),
+                    allowedImbalance = c(0.04,0.04, 0.07,0.07, 0.05),
                     seed = 1234,
                     returnSeq = 5)
 head(test)

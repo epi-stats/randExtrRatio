@@ -15,7 +15,7 @@
 #' head(test)
 #' plotSequence(test)
 #' test <- randomRatio(5, c(21,21,2,2,8), 500,
-#'                     allowedImbalance = c(0.06,0.06, 0.04,0.04, 0.05),
+#'                     allowedImbalance = c(0.04,0.04, 0.07,0.07, 0.05),
 #'                     seed = 1234,
 #'                     returnSeq = 5)
 #' head(test)
@@ -26,10 +26,6 @@
 
 plotSequence <- function(x, lty = 1) {
   arms <- max(x)
-
-  opar <- par()
-  par(mar = c(4, 4, 0, 0) + 0.1)
-
   n <- table(x)
 
   plot(
@@ -65,6 +61,5 @@ plotSequence <- function(x, lty = 1) {
           col = i + 1)
   }
 
-  par(opar)
   invisible(NULL)
 }
