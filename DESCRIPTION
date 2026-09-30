@@ -26,3 +26,5 @@ Description: Package to generate random allocation sequences for trials
 License: MIT
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/epi-stats/randExtrRatio
+BugReports: https://github.com/epi-stats/randExtrRatio/issues
