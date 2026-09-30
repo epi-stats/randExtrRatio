@@ -2,7 +2,7 @@
 % Please edit documentation in R/randomRatio.R
 \name{randomRatio}
 \alias{randomRatio}
-\title{Function to generate allocation sequences for randomized trials if the allocation ratio is large}
+\title{Function to generate randomisation sequences if the allocation ratio is large}
 \usage{
 randomRatio(
   arms,
@@ -34,7 +34,7 @@ Returns a vector or matrix with 1 or more valid allocation sequences
 }
 \description{
 Function to generate allocation sequences for clinical trials if
-the allocation ratio is unusually large.
+the allocation ratio is large.
 In this situation simple block randomisation may cause problems
 because a large block size could result in groups being over- or underrepresented.
 To overcome this limitation, the function combines features of block randomisation,

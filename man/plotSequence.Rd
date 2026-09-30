@@ -16,10 +16,8 @@ invisible(NULL)
 }
 \description{
 Function to plot sequences generate with function randomRatio
-If other allocation sequences are plotted:
-the function assumes that the different trial arms are coded numerically
-with numbers starting at 1 and without any has no missing data-
-sequences
+The function assumes that the different trial arms are coded as integer
+with numbers starting at 1 and has no missing data
 }
 \examples{
 test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000, returnSeq = 1)
