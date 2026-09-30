@@ -6,7 +6,7 @@ ivermectin and albendazole and albendazole alone in adolescents and adults infec
 In this situation simple block randomisation may cause problems
 
 To install the package:
+(If the package devtools is not yet installed on your system, you may remove the '#' from the next line to install it first.
+install.packages("devtools"))
 
-# If the package devtools is not yet installed on your system, you may remove the '#' from the next line to install it first.
-# install.packages("devtools")
 devtools::install_github("epi-stats/randExtrRatio")
