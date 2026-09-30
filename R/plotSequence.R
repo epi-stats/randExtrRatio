@@ -1,8 +1,5 @@
 #' Function to plot the imbalance of allocation sequences
 #'
-#' @export
-#'
-#' @description
 #' Function to plot sequences generate with function randomRatio
 #' The function assumes that the different trial arms are coded as integer
 #' with numbers starting at 1 and has no missing data
@@ -23,6 +20,8 @@
 #'                     returnSeq = 5)
 #' head(test)
 #' plotSequence(test[,1])
+#'
+#' @export
 
 
 plotSequence <- function(x, lty = 1) {

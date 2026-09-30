@@ -1,35 +1,47 @@
-#' Function to generate randomisation sequences if the allocation ratio is large
-#' @export
+#' Generate randomisation sequences for large allocation ratios
 #'
-#' @description
-#' Function to generate allocation sequences for clinical trials if
-#' the allocation ratio is large.
-#' In this situation simple block randomisation may cause problems
-#' because a large block size could result in groups being over- or underrepresented.
-#' To overcome this limitation, the function combines features of block randomisation,
-#' biased coin design, and covariate constraint randomisation to ensure that
-#' the allocation is always close to the anticipated.
+#' Generates allocation sequences for clinical trials when the allocation
+#' ratio is large. In this situation, simple block randomisation may cause
+#' problems because a large block size could result in groups being
+#' over- or underrepresented.
 #'
-#' @param arms Number of trial arms
-#' @param ratios Allocation ratiuo for each arm, e.g. for 3 arms 10:5:1
-#' @param totalN Anticipated number of participants Total number of Numer same_axes_per_treatment_logical a logical (TRUE/FALSE) if same axes
-#' @param allowedImbalance the maximum tolerated number of imbalance, defoult is 7%
-#' @param loops Number of allocation sequences to be evaluated, default = 10000
-#' @param seed random seed
-#' @param returnSeq Number of valid sequences to be returned, default 1, NA = all
-#' @return Returns a vector or matrix with 1 or more valid allocation sequences
+#' To overcome this limitation, the function combines features of block
+#' randomisation, biased coin design, and covariate-constrained randomisation
+#' to ensure that the allocation remains close to the anticipated ratio.
 #'
-#' @export
+#' @param arms Number of trial arms.
+#' @param ratios Allocation ratio for each arm, e.g. for 3 arms \code{10:5:1}.
+#' @param totalN Anticipated total number of participants.
+#' @param allowedImbalance Maximum tolerated imbalance. Default is 7\%.
+#' @param loops Number of allocation sequences to be evaluated. Default is 10000.
+#' @param seed Random seed.
+#' @param returnSeq Number of valid sequences to be returned. Default is 1;
+#'   \code{NA} returns all valid sequences.
+#'
+#' @return A vector or matrix containing one or more valid allocation sequences.
+#'
 #' @examples
-#' test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000)
+#' test <- randomRatio(5, c(21, 21, 2, 2, 8), 500, loops = 1000)
 #' test
-#' test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000, returnSeq = 5)
+#'
+#' test <- randomRatio(5, c(21, 21, 2, 2, 8), 500,
+#'                     loops = 1000, returnSeq = 5)
 #' head(test)
-#' test <- randomRatio(5, c(21,21,2,2,8), 500,
-#'                     allowedImbalance = c(0.03, 0.03, 0.06, 0.06, 0.04),
-#'                     seed = 1234,
-#'                     returnSeq = 5)
+#'
+#' test <- randomRatio(
+#'   5,
+#'   c(21, 21, 2, 2, 8),
+#'   500,
+#'   loops = 1000,
+#'   allowedImbalance = c(0.03, 0.03, 0.06, 0.06, 0.04),
+#'   seed = 1234,
+#'   returnSeq = 5
+#' )
 #' head(test)
+#'
+#' @export
+
+
 
 randomRatio <- function(arms,
                         ratios,

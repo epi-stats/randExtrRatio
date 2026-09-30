@@ -29,4 +29,5 @@ test <- randomRatio(5, c(21,21,2,2,8), 500,
                     returnSeq = 5)
 head(test)
 plotSequence(test[,1])
+
 }

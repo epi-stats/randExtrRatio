@@ -2,7 +2,7 @@
 % Please edit documentation in R/randomRatio.R
 \name{randomRatio}
 \alias{randomRatio}
-\title{Function to generate randomisation sequences if the allocation ratio is large}
+\title{Generate randomisation sequences for large allocation ratios}
 \usage{
 randomRatio(
   arms,
@@ -15,40 +15,52 @@ randomRatio(
 )
 }
 \arguments{
-\item{arms}{Number of trial arms}
+\item{arms}{Number of trial arms.}
 
-\item{ratios}{Allocation ratiuo for each arm, e.g. for 3 arms 10:5:1}
+\item{ratios}{Allocation ratio for each arm, e.g. for 3 arms \code{10:5:1}.}
 
-\item{totalN}{Anticipated number of participants Total number of Numer same_axes_per_treatment_logical a logical (TRUE/FALSE) if same axes}
+\item{totalN}{Anticipated total number of participants.}
 
-\item{allowedImbalance}{the maximum tolerated number of imbalance, defoult is 7%}
+\item{allowedImbalance}{Maximum tolerated imbalance. Default is 7\%.}
 
-\item{loops}{Number of allocation sequences to be evaluated, default = 10000}
+\item{loops}{Number of allocation sequences to be evaluated. Default is 10000.}
 
-\item{seed}{random seed}
+\item{seed}{Random seed.}
 
-\item{returnSeq}{Number of valid sequences to be returned, default 1, NA = all}
+\item{returnSeq}{Number of valid sequences to be returned. Default is 1;
+\code{NA} returns all valid sequences.}
 }
 \value{
-Returns a vector or matrix with 1 or more valid allocation sequences
+A vector or matrix containing one or more valid allocation sequences.
 }
 \description{
-Function to generate allocation sequences for clinical trials if
-the allocation ratio is large.
-In this situation simple block randomisation may cause problems
-because a large block size could result in groups being over- or underrepresented.
-To overcome this limitation, the function combines features of block randomisation,
-biased coin design, and covariate constraint randomisation to ensure that
-the allocation is always close to the anticipated.
+Generates allocation sequences for clinical trials when the allocation
+ratio is large. In this situation, simple block randomisation may cause
+problems because a large block size could result in groups being
+over- or underrepresented.
+}
+\details{
+To overcome this limitation, the function combines features of block
+randomisation, biased coin design, and covariate-constrained randomisation
+to ensure that the allocation remains close to the anticipated ratio.
 }
 \examples{
-test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000)
+test <- randomRatio(5, c(21, 21, 2, 2, 8), 500, loops = 1000)
 test
-test <- randomRatio(5, c(21,21,2,2,8), 500, loops = 1000, returnSeq = 5)
+
+test <- randomRatio(5, c(21, 21, 2, 2, 8), 500,
+                    loops = 1000, returnSeq = 5)
 head(test)
-test <- randomRatio(5, c(21,21,2,2,8), 500,
-                    allowedImbalance = c(0.03, 0.03, 0.06, 0.06, 0.04),
-                    seed = 1234,
-                    returnSeq = 5)
+
+test <- randomRatio(
+  5,
+  c(21, 21, 2, 2, 8),
+  500,
+  loops = 1000,
+  allowedImbalance = c(0.03, 0.03, 0.06, 0.06, 0.04),
+  seed = 1234,
+  returnSeq = 5
+)
 head(test)
+
 }
