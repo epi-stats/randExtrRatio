@@ -28,3 +28,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/epi-stats/randExtrRatio
 BugReports: https://github.com/epi-stats/randExtrRatio/issues
+Config/roxygen2/version: 8.1.0
