@@ -17,7 +17,7 @@ randomRatio(
 \arguments{
 \item{arms}{Number of trial arms.}
 
-\item{ratios}{Allocation ratio for each arm, e.g. for 3 arms \code{10:5:1}.}
+\item{ratios}{Allocation ratio for each arm, e.g. for 3 arms c(10,5,1).}
 
 \item{totalN}{Anticipated total number of participants.}
 

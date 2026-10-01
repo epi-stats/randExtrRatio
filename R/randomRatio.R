@@ -10,7 +10,7 @@
 #' to ensure that the allocation remains close to the anticipated ratio.
 #'
 #' @param arms Number of trial arms.
-#' @param ratios Allocation ratio for each arm, e.g. for 3 arms \code{10:5:1}.
+#' @param ratios Allocation ratio for each arm, e.g. for 3 arms c(10,5,1).
 #' @param totalN Anticipated total number of participants.
 #' @param allowedImbalance Maximum tolerated imbalance. Default is 7\%.
 #' @param loops Number of allocation sequences to be evaluated. Default is 10000.
