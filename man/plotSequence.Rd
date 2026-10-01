@@ -4,18 +4,20 @@
 \alias{plotSequence}
 \title{Function to plot the imbalance of allocation sequences}
 \usage{
-plotSequence(x, lty = 1)
+plotSequence(x, colors = NA, ...)
 }
 \arguments{
 \item{x}{Vector with the random allocation sequence}
 
-\item{lty}{Line type as in the generic plot function}
+\item{colors}{vector of colors of same length as number of trial arms (default 1:Narms)}
+
+\item{...}{further arguments passed to \link[graphics]{lines}, e.g. lty or lwd}
 }
 \value{
 invisible(NULL)
 }
 \description{
-Function to plot sequences generate with function randomRatio
+Function to plot sequences generate with function \link[randExtrRatio]{randomRatio}
 The function assumes that the different trial arms are coded as integer
 with numbers starting at 1 and has no missing data
 }
