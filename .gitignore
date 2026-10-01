@@ -1,3 +1,4 @@
+# ignore files stored in this directory
 .Rproj.user
 .Rhistory
 .RData
